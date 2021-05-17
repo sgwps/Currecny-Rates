@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>name="Button.White" parent="ThemeOverlay.AppCompat">
+    <item name="colorPrimary" type="color">@color/blue_light</item>
+    <item name="colorPrimaryVariant" type="color">@color/blue_light</item>
+    <item name="colorOnPrimary" type="color">@color/blue_light</item>
+
+</resources>

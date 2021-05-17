@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Currency Rates</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="conversion_title">Conversion</string>
+    <string name="graph_title">Graph</string>
+    <string name="savings_title">Savings</string>
+    <string name="dynamic_title">Dynamic</string>
+    <string name="active">active</string>
+    <string name="graph_1">min.</string>
+    <string name="graph_2">max.</string>
+    <string name="grapg_3">avg.</string>
+    <string-array name="currencies">
+        <item>AUD</item>
+        <item>BGN</item>
+        <item>BRL</item>
+        <item>CAD</item>
+        <item>CHF</item>
+        <item>CNY</item>
+        <item>CZK</item>
+        <item>DKK</item>
+        <item>EUR</item>
+        <item>GBP</item>
+        <item>HKD</item>
+        <item>HRK</item>
+        <item>HUF</item>
+        <item>IDR</item>
+        <item>ILS</item>
+        <item>INR</item>
+        <item>ISK</item>
+        <item>JPY</item>
+        <item>KRW</item>
+        <item>MXN</item>
+        <item>MYR</item>
+        <item>NOK</item>
+        <item>NZD</item>
+        <item>PHP</item>
+        <item>PLN</item>
+        <item>RON</item>
+        <item>RUB</item>
+        <item>SEK</item>
+        <item>SGD</item>
+        <item>THB</item>
+        <item>TRY</item>
+        <item>USD</item>
+        <item>ZAR</item>
+    </string-array>
+    <string-array name="currencies_full">
+        <item>Australian Dollar</item>
+        <item>BGN</item>
+        <item>FRR</item>
+    </string-array>
+    <string name="title_activity_choose_date_act">Choose_date_act</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>

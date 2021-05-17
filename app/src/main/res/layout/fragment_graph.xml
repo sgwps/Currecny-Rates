@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Graph">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/arrow"
+
+            app:layout_constraintBottom_toTopOf="@+id/chart"
+            app:layout_constraintEnd_toStartOf="@+id/cardView"
+            app:layout_constraintStart_toEndOf="@+id/cardView2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="0dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:innerRadius="0dp"
+            android:shape="rectangle"
+            android:stateListAnimator="@null"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#00FFFFFF"
+            app:cardBackgroundColor="#00FFFFFF"
+            app:cardElevation="0dp"
+            app:cardMaxElevation="0dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/rounded_txt"
+
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/curr_from_gr"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:src="@drawable/ic_aud"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/curr_from_gr1"
+                    android:layout_width="86dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="start|center_vertical"
+                    android:stateListAnimator="@null"
+                    android:text="AUD"
+                    android:textColor="@color/text_main"
+                    android:textSize="36dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/curr_from_gr"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="0dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:innerRadius="0dp"
+            android:shape="rectangle"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#00FFFFFF"
+            app:cardBackgroundColor="#00FFFFFF"
+            android:stateListAnimator="@null"
+            app:cardElevation="0dp"
+            app:cardMaxElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/rounded_txt"
+
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/curr_to_gr"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_marginEnd="32dp"
+                    android:src="@drawable/ic_aud"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/curr_to_gr1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/curr_to_gr1"
+                    android:layout_width="86dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="start|center_vertical"
+                    android:stateListAnimator="@null"
+                    android:text="AUD"
+                    android:textColor="@color/text_main"
+                    android:textSize="36dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/curr_to_gr"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+        </com.github.mikephil.charting.charts.LineChart>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:cardElevation="0dp"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#00FFFFFF"
+            app:cardBackgroundColor="#00FFFFFF"
+            app:cardMaxElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chart">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/rounded_txt"
+
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="3dp"
+                    android:gravity="bottom|start"
+                    android:text="@string/graph_1"
+                    android:textColor="@color/text_main"
+                    android:textSize="24dp"
+                    app:layout_constraintBottom_toTopOf="@+id/textView2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/min_gr"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="3dp"
+                    android:gravity="bottom|start"
+                    android:text="TextView"
+                    android:textColor="@color/text_main"
+                    android:textSize="36dp"
+                    app:layout_constraintBottom_toTopOf="@+id/divider2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/date_min" />
+
+                <TextView
+                    android:id="@+id/max_gr"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="3dp"
+                    android:gravity="bottom|start"
+                    android:text="TextView"
+                    android:textColor="@color/text_main"
+                    android:textSize="36dp"
+                    app:layout_constraintBottom_toTopOf="@+id/divider3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/date_max" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="3dp"
+                    android:gravity="bottom|start"
+                    android:text="@string/graph_2"
+                    android:textColor="@color/text_main"
+                    android:textSize="24dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="144dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="3dp"
+                    android:gravity="bottom|start"
+                    android:text="@string/grapg_3"
+                    android:textColor="@color/text_main"
+                    android:textSize="24dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+                <TextView
+                    android:id="@+id/avg_gr"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="3dp"
+                    android:gravity="bottom|start"
+                    android:text="TextView"
+                    android:textColor="@color/text_main"
+                    android:textSize="36dp"
+                    app:layout_constraintBottom_toTopOf="@+id/divider4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView5" />
+
+                <TextView
+                    android:id="@+id/date_gr"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="bottom|start"
+                    android:text="TextView"
+                    android:textColor="@color/text_main"
+                    android:textSize="36dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/date_gr_date"
+                    app:layout_constraintTop_toBottomOf="@+id/divider4" />
+
+                <View
+                    android:id="@+id/divider2"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="?android:attr/listDivider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <View
+                    android:id="@+id/divider3"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="3dp"
+                    android:background="?android:attr/listDivider"
+                    app:layout_constraintBottom_toTopOf="@+id/textView5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                <TextView
+                    android:id="@+id/date_gr_date"
+                    android:layout_width="144dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="bottom|start"
+                    android:text="25-09-2004"
+                    android:textColor="@color/text_main"
+                    android:textSize="24dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider4" />
+
+                <View
+                    android:id="@+id/divider4"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="?android:attr/listDivider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+                <TextView
+                    android:id="@+id/date_min"
+                    android:layout_width="84dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:gravity="bottom|start"
+                    android:text="20-04-2007"
+                    android:textColor="@color/grey"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toTopOf="@+id/divider2"
+                    app:layout_constraintStart_toEndOf="@+id/textView" />
+
+                <TextView
+                    android:id="@+id/date_max"
+                    android:layout_width="84dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:gravity="bottom|start"
+                    android:text="TextView"
+                    android:textColor="@color/grey"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toTopOf="@+id/divider3"
+                    app:layout_constraintStart_toEndOf="@+id/textView2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

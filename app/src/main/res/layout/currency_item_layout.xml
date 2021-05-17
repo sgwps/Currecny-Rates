@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    android:onClick="get_currency"
+    android:scrollbarSize="56dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/background"
+        android:backgroundTint="@color/background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card_currency"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="@color/background"
+            android:backgroundTint="@color/background">
+
+
+            <ImageView
+                android:id="@+id/flag"
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/currency_txt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_aud"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:id="@+id/currency_txt"
+                android:layout_width="86dp"
+                android:layout_height="66dp"
+                android:gravity="start|center_vertical"
+                android:text="AUD"
+                android:textColor="@color/text_main"
+                android:textSize="36dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/currency_full_txt"
+                app:layout_constraintStart_toEndOf="@+id/flag"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/currency_full_txt"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="start|center_vertical"
+                android:text="TextView"
+                android:textColor="@color/grey"
+                android:textSize="28dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/currency_txt"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

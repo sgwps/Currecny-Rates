@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/conversion_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:contentDescription="to"
+    tools:context=".Conversion">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constr"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stateListAnimator="@null"
+        android:background="@color/background">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="156dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:stateListAnimator="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stateListAnimator="@null">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/curr_to"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="#00FFFFFF"
+                    android:backgroundTint="#00FFFFFF"
+                    app:cardBackgroundColor="#00FFFFFF"
+
+                    android:contentDescription="to"
+                    android:innerRadius="0dp"
+                    android:onClick="choose_currency"
+                    android:shape="rectangle"
+                    android:stateListAnimator="@null"
+
+                    app:cardCornerRadius="9dp"
+                    app:cardElevation="0dp"
+                    app:cardMaxElevation="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/curr_from"
+                    tools:ignore="OnClick">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/rounded_txt"
+
+                        android:stateListAnimator="@null">
+
+                        <ImageView
+                            android:id="@+id/flag_to"
+                            android:layout_width="72dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_aud"
+                            android:stateListAnimator="@null"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/curr_to_txt"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/curr_to_txt"
+                            android:layout_width="86dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:gravity="start|center_vertical"
+                            android:stateListAnimator="@null"
+                            android:text="AUD"
+                            android:textColor="@color/text_main"
+                            android:textSize="36dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/curr_to_full"
+                            app:layout_constraintStart_toEndOf="@+id/flag_to"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/curr_to_full"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:layout_marginBottom="24dp"
+                            android:gravity="start|center_vertical"
+                            android:stateListAnimator="@null"
+                            android:text="Australian Dollar"
+                            android:textColor="@color/grey"
+                            android:textSize="24dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/curr_to_txt"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/curr_from"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:contentDescription="from"
+                    android:innerRadius="0dp"
+                    android:onClick="choose_currency"
+                    android:shape="rectangle"
+                    android:stateListAnimator="@null"
+                    app:cardCornerRadius="9dp"
+                    app:cardElevation="0dp"
+                    app:cardMaxElevation="0dp"
+                    app:layout_constraintBottom_toTopOf="@+id/curr_to"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="#00FFFFFF"
+                    android:backgroundTint="#00FFFFFF"
+                    app:cardBackgroundColor="#00FFFFFF"
+                    tools:ignore="OnClick">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/rounded_txt"
+
+                        android:stateListAnimator="@null">
+
+                        <ImageView
+                            android:id="@+id/flag_from"
+                            android:layout_width="72dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_aud"
+                            android:stateListAnimator="@null"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/curr_from_txt"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/curr_from_txt"
+                            android:layout_width="86dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:gravity="start|center_vertical"
+                            android:stateListAnimator="@null"
+                            android:text="AUD"
+                            android:textColor="@color/text_main"
+                            android:textSize="36dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/curr_from_full"
+                            app:layout_constraintStart_toEndOf="@+id/flag_from"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/curr_from_full"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:layout_marginBottom="24dp"
+                            android:gravity="start|center_vertical"
+                            android:stateListAnimator="@null"
+                            android:text="Australian Dollar"
+                            android:textColor="@color/grey"
+                            android:textSize="24dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/curr_from_txt"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stateListAnimator="@null">
+
+                <ImageButton
+                    android:id="@+id/switch_"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_marginTop="42dp"
+                    android:layout_marginEnd="14dp"
+                    android:layout_marginBottom="42dp"
+                    android:background="#00FFFFFF"
+                    android:stateListAnimator="@null"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_pointers" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/dates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+
+            android:stateListAnimator="@null"
+            app:cardElevation="0dp"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#00FFFFFF"
+            app:cardBackgroundColor="#00FFFFFF"
+            app:cardMaxElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/summ">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_txt"
+
+                android:stateListAnimator="@null">
+
+                <Button
+                    android:id="@+id/date_begin"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/rounded"
+                    android:stateListAnimator="@null"
+                    android:text="Button"
+                    android:textColor="@color/text_main"
+                    android:textSize="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/date_end"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/rounded"
+                    android:backgroundTint="#00FFFFFF"
+                    android:stateListAnimator="@null"
+                    android:text="Button"
+                    android:textColor="@color/text_main"
+                    android:textSize="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+                <TextView
+                    android:id="@+id/date_end_1_num"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="8dp"
+
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:autoSizeMaxTextSize="36dp"
+                    android:autoSizeMinTextSize="18dp"
+                    android:gravity="start|center_vertical"
+                    android:shape="oval"
+                    android:stateListAnimator="@null"
+                    android:text="TextView"
+                    android:textColor="@color/text_main"
+                    android:textSize="36dp"
+                    app:cornerRadius="9dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/date_end" />
+
+                <TextView
+                    android:id="@+id/date_begin_1_num"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+
+                    android:layout_marginEnd="8dp"
+                    android:autoSizeMaxTextSize="36dp"
+                    android:autoSizeMinTextSize="18dp"
+                    android:gravity="start|center_vertical"
+                    android:shape="oval"
+                    android:stateListAnimator="@null"
+                    android:text="TextView"
+                    android:textColor="@color/text_main"
+                    android:textSize="36dp"
+                    app:cornerRadius="9dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/date_begin" />
+
+                <TextView
+                    android:id="@+id/date_begin_abs_num"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="8dp"
+
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:autoSizeMaxTextSize="18dp"
+                    android:autoSizeMinTextSize="9dp"
+                    android:gravity="start|center_vertical"
+                    android:shape="oval"
+                    android:stateListAnimator="@null"
+                    android:text="TextView"
+                    android:textColor="@color/grey"
+                    android:textSize="18dp"
+                    app:cornerRadius="9dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/date_begin_1_num" />
+
+                <TextView
+                    android:id="@+id/date_end_abs_num"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:autoSizeMaxTextSize="18dp"
+                    android:autoSizeMinTextSize="9dp"
+                    android:gravity="start|center_vertical"
+                    android:shape="oval"
+                    android:stateListAnimator="@null"
+                    android:text="TextView"
+                    android:textColor="@color/grey"
+                    android:textSize="18dp"
+                    app:cornerRadius="9dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/date_end_1_num" />
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@color/blue_light"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/date_begin_abs_num" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/summ"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#00FFFFFF"
+            app:cardBackgroundColor="#00FFFFFF"
+            app:cardElevation="0dp"
+            app:cardMaxElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_txt"
+
+                android:stateListAnimator="@null">
+
+                <TextView
+                    android:id="@+id/summ1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="52dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="top|left"
+                    android:text="$"
+                    android:textColor="@color/text_main"
+                    android:textSize="36sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/summa"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="4dp"
+                    android:backgroundTint="@color/blue_main"
+                    android:ems="10"
+                    android:gravity="bottom|left"
+                    android:textSelectHandle="@drawable/none"
+                    android:textCursorDrawable="@drawable/cursor"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberDecimal"
+                    android:text="1"
+                    android:textColor="@color/text_main"
+                    android:textColorHighlight="@color/grey"
+                    android:textColorLink="@color/blue_main"
+                    android:textSize="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/summ1"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/differences"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:shape="rectangle"
+            app:cardCornerRadius="9dp"
+            app:cardElevation="0dp"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#00FFFFFF"
+            app:cardBackgroundColor="#00FFFFFF"
+            app:cardMaxElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dates">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:background="@drawable/rounded_txt"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/difference"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="start|center_vertical"
+                    android:paddingLeft="3dp"
+                    android:text="Difference"
+                    android:textColor="@color/grey"
+                    android:textSize="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/difference_num"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:autoSizeMaxTextSize="36dp"
+                    android:autoSizeMinTextSize="18dp"
+                    android:gravity="start|center_vertical"
+                    android:paddingLeft="3dp"
+                    android:text="TextView"
+                    android:textColor="@color/text_main"
+                    android:textSize="36dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/difference" />
+
+                <TextView
+                    android:id="@+id/difference_abs_num"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:autoSizeMaxTextSize="18dp"
+                    android:autoSizeMinTextSize="9dp"
+                    android:gravity="start|center_vertical"
+                    android:paddingLeft="3dp"
+                    android:text="TextView"
+                    android:textColor="@color/grey"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/difference_num" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

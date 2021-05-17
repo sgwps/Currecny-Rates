@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/grey_l"
+    tools:context=".MainActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView4"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        app:layout_constraintBottom_toTopOf="@+id/fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include layout="@layout/toolbar" />
+    </androidx.cardview.widget.CardView>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:itemIconSize="36dp"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_bottom" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView4"
+        app:navGraph="@navigation/navigation_bottom" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
